@@ -1,0 +1,17 @@
+-- list code that is executed at a later time 
+-- command to run when execute() is called 
+
+-- turn tv on is commmand 
+-- when device button sends turn tv on
+-- reciever television turns tv on 
+
+-- command just has execute 
+-- when invoker calls fn(), execute is called
+
+-- allows set asie list of commands for later use 
+-- procedures to be called again and again 
+
+-- implement undo commands to undo 
+
+-- neg is create many classes with 1 method 
+
