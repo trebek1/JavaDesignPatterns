@@ -58,7 +58,12 @@ Structural
 	-- Decouple abstraction from implementation so they can vary independently 
 	-- Progressively adding functionality while separating out major differences using abstract classes 
 	-- Create 2 layers of abstraction (devices and remote controls)
-	--  
+	--  Define common methods explicitly in abstract classes 
+	-- write uncommon methods in classes that extend the abstract classes 
+	-- example: buttons 7,8 defined in entertainment device, tv device extends and defines buttons 5 and 6
+	-- Abstract remote takes a device and calls its method button 5 and 6 but leaves 
+	 button 9 void 
+	 -- specific remotes implement button 9 as pause vs mute
 
 3). Composite
 4). Decorator
