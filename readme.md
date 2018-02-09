@@ -54,7 +54,12 @@ Structural
 	-- Adaptee is what needs to be modified
 	-- Create new class that takes the adaptee as an arg and implements the Target
 	-- call adaptee methods in the target functions  
-2). Bridge - 
+2). Bridge 
+	-- Decouple abstraction from implementation so they can vary independently 
+	-- Progressively adding functionality while separating out major differences using abstract classes 
+	-- Create 2 layers of abstraction (devices and remote controls)
+	--  
+
 3). Composite
 4). Decorator
 5). Facade Pattern
