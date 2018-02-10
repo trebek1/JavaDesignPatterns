@@ -121,8 +121,18 @@ Behavioral
   -- The invoker object will have a method that sounds like what you want to do
   -- this method will call execute and run the function referenced
 
-3). Interpreter Pattern
-	--
+3). Intrpreter Pattern
+-- Interpreter pattern is normally ignored (haha)
+-- Convert one representation of data into another 
+-- Context - info to be interpreted
+-- Expression is an abstract class that defines all methods
+needed to perform the different conversions 
+-- The terminal or concrete expression provides specific
+conversions on different types of data 
+-- create an abstract class with all the possible types
+-- extend each into its own concrete class with the conversions
+-- have one class that sets up the question
+-- have another that takes in input and converts it and displays to screen
 
 4). Iterator Pattern 
   -- uniform way to cycle through collection of objects 
