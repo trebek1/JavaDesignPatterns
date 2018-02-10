@@ -15,7 +15,6 @@ public class UFOBossEnemyShip extends EnemyShip{
 	public UFOBossEnemyShip(EnemyShipFactory shipFactory){
 		
 		this.shipFactory = shipFactory;
-		
 	}
 	
 	// EnemyShipBuilding calls this method to build a 
@@ -33,7 +32,5 @@ public class UFOBossEnemyShip extends EnemyShip{
 		
 		weapon = shipFactory.addESGun();
 		engine = shipFactory.addESEngine();
-		
 	}
-	
 }
