@@ -45,6 +45,8 @@ Creational
 	-- Think sheepObject = (Sheep) super.clone();
 
 5). Abstract Factory Pattern
+  -- like factory but everything is encapsulated
+  -- final objects use objects that use the strategy pattern (composition for features)
 
 Structural 
 1). Adapter
@@ -196,4 +198,18 @@ Observer Design Pattern
 -- one class implements observer and holds ref to object implementing subject 
 -- observer just has update method that it uses to make updates when notified
 -- subject registers observer in constructor 
+
+Mediator Pattern
+
+
+
+Visitor Pattern
+
+
+
+
+
+
+
+
 
