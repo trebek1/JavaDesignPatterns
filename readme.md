@@ -8,7 +8,6 @@ Structural Patterns - How class/object is comprised. Should you use inheritance?
 
 Behavioral Patterns - How objects communicate 
 
-
 General Gang of 4 Rules 
 1). Composition over Inheritance 
 2). Program to the interface not to the implementation 
@@ -64,16 +63,127 @@ Structural
 	-- Abstract remote takes a device and calls its method button 5 and 6 but leaves 
 	 button 9 void 
 	 -- specific remotes implement button 9 as pause vs mute
-
 3). Composite
-4). Decorator
-5). Facade Pattern
-6). Flyweight
-7). Proxy
+  -- treat individual objects and compositions of objects uniformly 
+  -- create an abstract class that implements all methods throwing UnsupportedOperationException();
+  -- since all objects will extend from this, implement methods that you want 
+  -- Example - Make songs and songGroups extend SongComponent so then you can iterate over both groups and individuals 
+  -- and be able to do common things like add and remove in both places
+4). Decorator 
+  -- Modify an object dynamically
+  -- Want capabilities of inheritance with subclasses but need to add functionality at runtime 
+  -- extend with new code rather than rewriting 
+  -- add functionality with many simple classes
+  -- basically using composition over inheritance 
+  -- Pizza basicPizza = new TomatoSauce(new Mozzarella(new PlainPizza()));
+  -- define the plain pizza then have each successive outer function call super and add to it 
+5). Facade Pattern 
+  -- Create a simplified interface that performs many actions behind the scenes
+  -- Can I withdraw 50 from the bank? 
+  -- Check if account # is right, check security code, check funds, withdraw/deny
+  -- Create a class for each action 
+  -- create and instance of each in the facade class 
+  -- actions are just a set of method calls to those objects 
+  -- if(acctChecker.accountActive(getAccountNumber()) && codeChecker.isCodeCorrect(getSecurityCode()) &&
+      fundChecker.haveEnoughMoney(cashToGet)) {System.out.println("Transaction Complete\n");};
+6). Flyweight 
+    - used when need to create large number of very similar objects (100k instead of 5k)
+    - reduce memory usage by sharing similar features instead of always creating new ones 
+    - create HashMap of objects, if one exists, then use it otherwise create a new one 
+7). Proxy 
+  - Create a class that limits access to another class
+  -- security reasons 
+  -- object is hard to create
+  -- Think ATM 
+  -- create an interface that has methods you want to illuminate
+  -- have new object instantiate a new ATM and implement those methods
+  -- Now the user only has access to what you want them to have access to
 
-Behavioral
-1). Chain of Responsibility
+Behavioral 
+
+1). Chain of Responsibility 
+  -- group of objects between them to solve a problem
+  -- if first cant solve, pass to next 
+  -- create a chain interface that allows you to set next and calculate
+  -- make all options implement chain 
+  -- make an object that takes in data and calc type (creates dataobject)
+  -- create chain by setting instances of each option together
+  -- call chain1.calculate(dataObject) 
+  -- chain1 will either solve or pass to next link to solve
+
 2). Command Pattern
-3). Interpreter Pattern 
-4). Iterator Pattern
+  -- object used to encapsulate all info needed to call method later
+  -- store lists of codes to execute later using execute() or undo()
+  -- Create class that sounds like what you want to do implementing command
+  -- Pass the object into the class with the method you want
+  -- Call the method from oject in execute() function
+  -- Now pass the command to an Invoker object
+  -- The invoker object will have a method that sounds like what you want to do
+  -- this method will call execute and run the function referenced
+
+3). Interpreter Pattern
+	--
+
+4). Iterator Pattern 
+  -- uniform way to cycle through collection of objects 
+  -- create a unique iterator method 
+  -- public interface SongIterator { public Iterator createIterator(); };
+  -- make iterator for each collection Iterator Songs70s = iter70sSongs.createIterator();
+  -- use while(iterator.hasNext()) to go through all items
+  -- Collections: bestSongs.iterator();
+  -- Arrays: Arrays.asList(bestSongs).iterator();
+  -- HashTables: bestSongs.values().iterator();
+
+Other Patterns 
+
+State Design Pattern
+-- alter state when interal state changes 
+-- context: Maintains an instance of a concrete state subclass
+-- state defines an interface for encapsulating behavior of context 
+-- concrete state: each subclass implements a behavior associated with state
+
+-- Interface (state) that defines the state 
+-- Each possible state is set in the class through composition
+-- Example: ATMState noCard, hasCard, hasCorrectPin and atmOutOfMoney
+  all implement the state and can be switched on using a setState method
+-- methods in ATMMachine reference atmState: aka: atmState.ejectCard()
+
+-- each concrete state (state of atm) is instantiated with (this) the context
+-- so, code methods for each state depending on basic logic based on context (ATMMachine)
+
+Template Design Pattern
+-- Hoagies 
+-- create group of subclasses that have to execute a similar group of methods 
+-- create an abstract class that contains a method called Template Method
+-- templte has set of method calls that every subclass object will call 
+--  subclass can override some of the method calls
+
+-- idea is that abstract base class defaults to true for all options 
+-- override hooks to disable options that you dont want: like meat for veg sub
+-- implement methods that do the things you want done (that are still true)
+-- sublasses of abstract class are defined the way you want them with specific options
+
+Strategy Design Pattern
+-- lose coupling
+-- Give Animals the ability to fly
+-- Use Composition instead of Inheritance 
+-- Change capibility at runtime 
+-- give SuperClass(animal) a field public Flys flyingType
+-- give SuperClass(animal) a setFlyingAbility function
+-- create two classes class ItFlys implements Flys interface.. and CantFly.
+-- set them in the subclasses, can still set new from super if want to make dog fly
+
+Observer Design Pattern
+-- when you need many other objects to recieve update when another object changes
+-- the subject (publisher) sends many stocks to observers
+-- the observers (subscribers) take the ones they want and use them
+-- lose coupling
+-- subject or publisher may send info to subscribers that they dont need 
+-- subject interface has 3 methods: register, unregister, notifyObserver
+-- observer interface has 1 method: update
+-- one class implements subject and keeps track of notifying adding/removing observers
+  in an arrayist 
+-- one class implements observer and holds ref to object implementing subject 
+-- observer just has update method that it uses to make updates when notified
+-- subject registers observer in constructor 
 
