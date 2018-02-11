@@ -141,7 +141,7 @@ Behavioral
   -- store lists of codes to execute later using execute() or undo()
   -- Create class that sounds like what you want to do implementing command
   -- Pass the object into the class with the method you want
-  -- Call the method from oject in execute() function
+  -- Call the method from object in execute() function
   -- Now pass the command to an Invoker object
   -- The invoker object will have a method that sounds like what you want to do
   -- this method will call execute and run the function referenced
