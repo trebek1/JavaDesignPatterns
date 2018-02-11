@@ -6,3 +6,6 @@ Mediator Design Pattern
 disparate sets of objects interact and communicate with each other 
 -- allows the actions of each object set to vary independently of each other 
 
+-- pass a mediator into each colleague 
+-- call methods to carry out transactions using mediator
+

@@ -222,10 +222,27 @@ Observer Design Pattern
 -- observer just has update method that it uses to make updates when notified
 -- subject registers observer in constructor 
 
-Mediator Pattern
+Mediator Design Pattern
+-- Handle communication between related objects (colleagues)
+-- All communication handled by mediator 
+-- Colleagues dont know anything about each other 
+-- GOF: Allows loose coupling by encapsulating the way 
+disparate sets of objects interact and communicate with each other 
+-- allows the actions of each object set to vary independently of each other 
 
+-- pass a mediator into each colleague 
+-- call methods to carry out transactions using mediator
 
 Visitor Pattern
+-- basically you overload a calculation in the implemented visitor
+-- pass the visitor into the visitable product 
+-- use the accept method to call the correct version of the calc 
+
+-- accept method accepts a visitor 
+-- visitor then can call visit on (this) 
+-- the implementation of visitor is overloaded so based on (this) you get differerent calcs
+-- visitor is composition for one method 
+
 
 
 

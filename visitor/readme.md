@@ -11,3 +11,7 @@ other classes without majorly editing them
 -- pass the visitor into the visitable product 
 -- use the accept method to call the correct version of the calc 
 
+-- accept method accepts a visitor 
+-- visitor then can call visit on (this) 
+-- the implementation of visitor is overloaded so based on (this) you get differerent calcs 
+

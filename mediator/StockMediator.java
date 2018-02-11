@@ -22,9 +22,8 @@ public class StockMediator implements Mediator {
 
 	@Override
 	public void saleOffer(String stock, int shares, int collCode) {
-
 		boolean stockSold = false;
-		for(StockOffer offer: stockBuyOffers){
+		for(StockOffer offer : stockBuyOffers){
 			if((offer.getStockSymbol() == stock) && (offer.getStockShares() == shares)){
 				System.out.println(shares + " shares of " + stock + 
 						" sold to colleague code " + offer.getCollCode());
@@ -47,9 +46,8 @@ public class StockMediator implements Mediator {
 	}
 
 	public void buyOffer(String stock, int shares, int collCode) {
-		
 		boolean stockBought = false;
-		for(StockOffer offer: stockSaleOffers){
+		for(StockOffer offer : stockSaleOffers){
 			if((offer.getStockSymbol() == stock) && (offer.getStockShares() == shares)){
 				System.out.println(shares + " shares of " + stock + 
 						" bought by colleague code " + offer.getCollCode());
@@ -70,7 +68,6 @@ public class StockMediator implements Mediator {
 	}
 	
 	public void getStockOfferings(){
-		
 		System.out.println("\nStocks for Sale");
 		for(StockOffer offer : stockSaleOffers){
 			System.out.println(offer.getStockShares() + " of " + offer.getStockSymbol());
