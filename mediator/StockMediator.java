@@ -17,7 +17,6 @@ public class StockMediator implements Mediator {
 	@Override
 	public void addColleague(Colleague newColleague){
 		colleagues.add(newColleague);
-		colleagueCodes++;
 		newColleague.setCollCode(colleagueCodes);
 	};
 
