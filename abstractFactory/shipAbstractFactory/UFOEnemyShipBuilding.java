@@ -31,4 +31,4 @@ public class UFOEnemyShipBuilding extends EnemyShipBuilding {
 		
 		return theEnemyShip;
 	}
-}
+}	

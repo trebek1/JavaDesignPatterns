@@ -7,5 +7,5 @@ Factory Pattern
 -- based on random number generator
 
 -- make sure all potential classes are of same superclass
--- centeralize class selection code 
+-- centralize class selection code 
 -- encapsulation

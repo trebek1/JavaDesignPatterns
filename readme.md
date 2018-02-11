@@ -47,6 +47,29 @@ Creational
 5). Abstract Factory Pattern
   -- like factory but everything is encapsulated
   -- final objects use objects that use the strategy pattern (composition for features)
+  -- families of related objects without specifying a concrete class 
+  -- use when many objects can be changed at runtime 
+  -- can get complicated!
+  -- regular factory chooses which version of something to make based on input
+  ----------Example -----
+  -- abstract class EnemyShipBuilding can makeEnemyShip and orderEnemyShip
+  -- class UFOEnemyShipBuilding extends EnemyShipBuilding
+  -- Here you implement makeEnemyShip and based on input create a factory
+  and use that factory to create the ship to return 
+  -- Now, the ships being built are abstract but you extend to get a certain kind of ship
+  -- This certain kind of ship takes a shipFactory in the constructor
+  -- this allows the factory passed in to give it specific features (guns)
+  ----------
+  -- choose the family of ships to make 
+  -- pass in the kinds you want to order 
+  -- the method (make enemy ship will create the factory needed) 
+  -- that factory will be passed to concrete final ship and correct pieces 
+  -- will be created through composition 
+  -- factory shifts from picking what kind of ship to build to making the specific
+  -- ship and using other factories to make their specific kind of ships 
+  -- shipfactory is now an interface instead of a class that returns a specific kind of ship
+  -- specific building now chooses what factory to use in creating specific enemy ship
+  -- specific enemy ship takes factory and implements correct methods 
 
 Structural 
 1). Adapter
@@ -200,7 +223,6 @@ Observer Design Pattern
 -- subject registers observer in constructor 
 
 Mediator Pattern
-
 
 
 Visitor Pattern
